@@ -18,9 +18,11 @@ class HomeController extends Controller
         // $customer_info->save();
 
 
-        // $customer_info = Customer::find(1);
+        // $customer_info = Customer::find(2);
 
         // $customer_info->delete();
+
+        Customer::where('id', 2) ->restore();
 
 
         return view('customer', compact('all_customer'));
