@@ -47,6 +47,14 @@ class HomeController extends Controller
 
         // DB::insert('insert into customers (name, phone, email) values(?, ?, ?)', ['Ariba', '123', 'ariba@gmail.com']);
 
+        DB::table('customers')->insert([
+            [
+                'name'=>'Abdullah',
+                'phone'=>'1234',
+                'email'=>'abdullah@gmail.com'
+            ]
+            ]);
+
         echo 'Successfully created customer';
     }
 
