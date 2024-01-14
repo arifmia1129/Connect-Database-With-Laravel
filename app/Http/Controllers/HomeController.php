@@ -9,7 +9,10 @@ class HomeController extends Controller
 {
 
     public function index() {
-        $all_customer = Customer::all();
+        // $all_customer = Customer::all();
+
+        $all_customer = DB::select('select * from customers');
+        // $all_customer = DB::select('select * from customers where email=?', ['ariba@gmail.com']);
 
 
          // $customer_info = Customer::find(1);
