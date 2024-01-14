@@ -29,6 +29,8 @@ class HomeController extends Controller
 
         // Customer::where('id', 3) -> forceDelete();
 
+        // DB::update('update customers set name=? where email=?', ['Ariba Binte Arif', 'ariba@gmail.com']);
+
 
         return view('customer', compact('all_customer'));
     }
