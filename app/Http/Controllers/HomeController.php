@@ -12,6 +12,17 @@ class HomeController extends Controller
         $all_customer = Customer::all();
 
 
+         // $customer_info = Customer::find(1);
+        // $customer_info->phone = '013';
+
+        // $customer_info->save();
+
+
+        // $customer_info = Customer::find(1);
+
+        // $customer_info->delete();
+
+
         return view('customer', compact('all_customer'));
     }
 
@@ -25,4 +36,5 @@ class HomeController extends Controller
 
         echo 'Successfully created customer';
     }
+
 }
