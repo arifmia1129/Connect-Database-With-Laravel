@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
-
+use DB;
 class HomeController extends Controller
 {
 
@@ -31,12 +31,14 @@ class HomeController extends Controller
     }
 
     public function store() {
-        $customer = new Customer();
-        $customer->name = "Md. Borhan Kabir Shahin";
-        $customer->email = "shahin@gmail.com";
-        $customer->phone = "015";
+        // $customer = new Customer();
+        // $customer->name = "Md. Borhan Kabir Shahin";
+        // $customer->email = "shahin@gmail.com";
+        // $customer->phone = "015";
 
-        $customer->save();
+        // $customer->save();
+
+        // DB::insert('insert into customers (name, phone, email) values(?, ?, ?)', ['Ariba', '123', 'ariba@gmail.com']);
 
         echo 'Successfully created customer';
     }
