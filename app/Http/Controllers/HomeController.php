@@ -22,7 +22,9 @@ class HomeController extends Controller
 
         // $customer_info->delete();
 
-        Customer::where('id', 2) ->restore();
+        // Customer::where('id', 2) ->restore();
+
+        // Customer::where('id', 3) -> forceDelete();
 
 
         return view('customer', compact('all_customer'));
