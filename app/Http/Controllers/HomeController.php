@@ -78,4 +78,10 @@ class HomeController extends Controller
         echo 'Successfully updated customer data';
     }
 
+    public function delete ($id) {
+        DB::table('customers')->where('id', $id)->delete();
+
+        echo 'Successfully deleted customer information';
+    }
+
 }

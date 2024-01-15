@@ -23,3 +23,5 @@ Route::get('create-customer', [HomeController::class, 'store']);
 Route::get('show-customer', [HomeController::class, 'index']);
 
 Route::get('update-customer', [HomeController::class, 'update']);
+
+Route::get('delete-customer/{id}', [HomeController::class, 'delete']);
