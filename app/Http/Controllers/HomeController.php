@@ -34,7 +34,15 @@ class HomeController extends Controller
         // DB::delete('delete from customers where id=?', [4]);
 
 
-        return view('customer', compact('all_customer'));
+        // return view('customer', compact('all_customer'));
+
+        // $customers = DB::table('customers')->get();
+        $customers = DB::table('customers')->where('id', '>', '3')->where('id', '<', '10')->get();
+
+        echo '<pre/>';
+
+        print_r($customers);
+
     }
 
     public function store() {
