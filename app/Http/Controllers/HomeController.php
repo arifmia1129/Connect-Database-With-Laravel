@@ -37,11 +37,12 @@ class HomeController extends Controller
         // return view('customer', compact('all_customer'));
 
         // $customers = DB::table('customers')->get();
-        $customers = DB::table('customers')->where('id', '>', '3')->where('id', '<', '10')->get();
+        // $customers = DB::table('customers')->where('id', '>', '3')->where('id', '<', '10')->get();
 
-        echo '<pre/>';
 
-        print_r($customers);
+        $customer = DB::table('customers')->find(2);
+
+        dd($customer);
 
     }
 
