@@ -67,4 +67,15 @@ class HomeController extends Controller
         echo 'Successfully created customer';
     }
 
+    public function update() {
+
+        $data = [
+            'name'=>'Md. Arif Mia',
+        ];
+
+        DB::table('customers')->where('id', 2)->update($data);
+
+        echo 'Successfully updated customer data';
+    }
+
 }
