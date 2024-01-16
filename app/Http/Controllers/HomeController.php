@@ -40,9 +40,17 @@ class HomeController extends Controller
         // $customers = DB::table('customers')->where('id', '>', '3')->where('id', '<', '10')->get();
 
 
-        $customer = DB::table('customers')->find(2);
+        // $customer = DB::table('customers')->find(2);
 
-        dd($customer);
+        $is_exists = DB::table('customers')->where('id', 5)->exists();
+
+        if($is_exists) {
+            dd(DB::table('customers')->find(5));
+        }else{
+            echo 'Customer not find';
+        }
+
+        // dd($customer);
 
     }
 
