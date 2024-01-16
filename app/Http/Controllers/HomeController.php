@@ -84,4 +84,10 @@ class HomeController extends Controller
         echo 'Successfully deleted customer information';
     }
 
+    public function balance() {
+      $result =  DB::table('customers')->join('balances', 'customers.id', '=', 'balances.customer_id')->select('balances.*', 'customers.name')->get();
+
+      dd($result);
+    }
+
 }
