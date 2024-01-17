@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,6 @@ Route::get('update-customer', [HomeController::class, 'update']);
 
 Route::get('delete-customer/{id}', [HomeController::class, 'delete']);
 Route::get('balance', [HomeController::class, 'balance']);
+
+
+Route::get('/employee', [EmployeeController::class,'index']);
