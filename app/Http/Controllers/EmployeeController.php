@@ -44,14 +44,22 @@ class EmployeeController extends Controller
     //     echo '<br><br><br>';
     // }
 
-    $result = DB::table('employee')->select('designation', DB::raw('COUNT(*) as total_count'))->groupBy('designation')->havingRaw('COUNT(*) > 1')->get();
+    // $result = DB::table('employee')->select('designation', DB::raw('COUNT(*) as total_count'))->groupBy('designation')->havingRaw('COUNT(*) > 1')->get();
+
+    // foreach($result as $item) {
+    //     $designation = $item->designation;
+    //     $total_count = $item->total_count;
+
+    //     echo 'Designation is: '.$designation.'<br>';
+    //     echo 'Total employee: '.$total_count.'<br><br>';
+    // }
+
+
+    $result = DB::table('employee')->orderBy('name', 'asc')->get();
 
     foreach($result as $item) {
-        $designation = $item->designation;
-        $total_count = $item->total_count;
-
-        echo 'Designation is: '.$designation.'<br>';
-        echo 'Total employee: '.$total_count.'<br><br>';
+        echo $item->name.' - '. $item->designation;
+        echo '<br><br>';
     }
 
     }
