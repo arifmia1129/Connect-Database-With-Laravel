@@ -29,19 +29,29 @@ class EmployeeController extends Controller
     // }
 
 
-    $result = DB::table('employee')->select('designation', DB::raw('COUNT(*) as total_count'), DB::raw('AVG(salary) as avg_salary'), DB::raw('MAX(salary) as max_salary'))->groupBy('designation')->get();
+    // $result = DB::table('employee')->select('designation', DB::raw('COUNT(*) as total_count'), DB::raw('AVG(salary) as avg_salary'), DB::raw('MAX(salary) as max_salary'))->groupBy('designation')->get();
+
+    // foreach($result as $item) {
+    //     $designation = $item->designation;
+    //     $avg_salary = $item->avg_salary;
+    //     $max_salary = $item->max_salary;
+    //     $total_count = $item->total_count;
+
+    //     echo 'Designation: '.$designation.'<br>';
+    //     echo 'Average salary: '.$avg_salary.'<br>';
+    //     echo 'Max salary: '.$max_salary.'<br>';
+    //     echo 'Total employee: '.$total_count.'<br>';
+    //     echo '<br><br><br>';
+    // }
+
+    $result = DB::table('employee')->select('designation', DB::raw('COUNT(*) as total_count'))->groupBy('designation')->havingRaw('COUNT(*) > 1')->get();
 
     foreach($result as $item) {
         $designation = $item->designation;
-        $avg_salary = $item->avg_salary;
-        $max_salary = $item->max_salary;
         $total_count = $item->total_count;
 
-        echo 'Designation: '.$designation.'<br>';
-        echo 'Average salary: '.$avg_salary.'<br>';
-        echo 'Max salary: '.$max_salary.'<br>';
-        echo 'Total employee: '.$total_count.'<br>';
-        echo '<br><br><br>';
+        echo 'Designation is: '.$designation.'<br>';
+        echo 'Total employee: '.$total_count.'<br><br>';
     }
 
     }
