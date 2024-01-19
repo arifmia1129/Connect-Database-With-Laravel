@@ -55,12 +55,18 @@ class EmployeeController extends Controller
     // }
 
 
-    $result = DB::table('employee')->orderBy('name', 'asc')->get();
+    // $result = DB::table('employee')->orderBy('name', 'asc')->get();
 
-    foreach($result as $item) {
-        echo $item->name.' - '. $item->designation;
-        echo '<br><br>';
-    }
+    // foreach($result as $item) {
+    //     echo $item->name.' - '. $item->designation;
+    //     echo '<br><br>';
+    // }
+
+
+    $result = DB::table('employee')->whereIn('id', [1, 3, 5])->get();
+
+    echo '<pre>';
+    print_r($result);
 
     }
 }
