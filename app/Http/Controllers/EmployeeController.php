@@ -73,7 +73,11 @@ class EmployeeController extends Controller
 
     // $result = DB::table('employee')->whereNot('designation', 'Junior Software Developer')->get();
 
-    $result = DB::table('employee')->whereNotIn('designation', ['Software Developer', 'Junior Software Developer'])->get();
+    // $result = DB::table('employee')->whereNotIn('designation', ['Software Developer', 'Junior Software Developer'])->get();
+
+    // $result = DB::table('employee')->whereBetween('id', [3,6])->get();
+
+    $result = DB::table('employee')->whereNotBetween('id', [3, 6])->get();
 
     echo '<pre>';
     print_r($result);
