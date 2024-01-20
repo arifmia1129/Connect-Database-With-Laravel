@@ -63,7 +63,13 @@ class EmployeeController extends Controller
     // }
 
 
-    $result = DB::table('employee')->whereIn('id', [1, 3, 5])->get();
+    // $result = DB::table('employee')->whereIn('id', [1, 3, 5])->get();
+
+    // echo '<pre>';
+    // print_r($result);
+
+
+    $result = DB::table('employee')->pluck('name');
 
     echo '<pre>';
     print_r($result);
