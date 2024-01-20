@@ -71,7 +71,9 @@ class EmployeeController extends Controller
 
     // $result = DB::table('employee')->pluck('name');
 
-    $result = DB::table('employee')->whereNot('designation', 'Junior Software Developer')->get();
+    // $result = DB::table('employee')->whereNot('designation', 'Junior Software Developer')->get();
+
+    $result = DB::table('employee')->whereNotIn('designation', ['Software Developer', 'Junior Software Developer'])->get();
 
     echo '<pre>';
     print_r($result);
