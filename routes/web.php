@@ -39,3 +39,5 @@ Route::get('patient/create', [PatientController::class, 'create']);
 Route::get('patient/show', [PatientController::class, 'show']);
 
 Route::get('patient/update', [PatientController::class, 'update']);
+
+Route::get('patient/delete', [PatientController::class, 'delete']);

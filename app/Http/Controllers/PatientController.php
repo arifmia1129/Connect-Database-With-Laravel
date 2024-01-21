@@ -47,4 +47,13 @@ class PatientController extends Controller
 
         echo 'Successfully updated patient information';
     }
+
+
+    public function delete() {
+        $patient = Patient::find(3);
+
+        $patient->delete();
+
+        echo 'Patient information deleted successfully';
+    }
 }
