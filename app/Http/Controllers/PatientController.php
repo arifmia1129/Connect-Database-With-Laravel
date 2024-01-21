@@ -56,4 +56,25 @@ class PatientController extends Controller
 
         echo 'Patient information deleted successfully';
     }
+
+
+    public function mass() {
+        // Patient::create([
+        //     'name'=>'Ariba',
+        //     'mobile'=>'1234567',
+        //     'floor'=>'6th',
+        //     'bed'=>'ABC'
+        // ]);
+
+        // echo 'Successfully inserted data';
+
+
+        $patient = Patient::find(1);
+
+        $patient->update([
+            'name'=>'Abdullah'
+        ]);
+
+        echo 'Successfully updated data';
+    }
 }
