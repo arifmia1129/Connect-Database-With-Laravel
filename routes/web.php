@@ -35,3 +35,5 @@ Route::get('/employee', [EmployeeController::class,'index']);
 
 
 Route::get('patient/create', [PatientController::class, 'create']);
+
+Route::get('patient/show', [PatientController::class, 'show']);
