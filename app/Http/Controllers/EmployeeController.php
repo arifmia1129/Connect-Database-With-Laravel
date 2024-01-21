@@ -77,7 +77,11 @@ class EmployeeController extends Controller
 
     // $result = DB::table('employee')->whereBetween('id', [3,6])->get();
 
-    $result = DB::table('employee')->whereNotBetween('id', [3, 6])->get();
+    // $result = DB::table('employee')->whereNotBetween('id', [3, 6])->get();
+
+    $result = DB::table('employee')->whereIn('id', function($query) {
+        $query->select('employee_id')->from('devices')->groupBy('employee_id');
+    })->get();
 
     echo '<pre>';
     print_r($result);
