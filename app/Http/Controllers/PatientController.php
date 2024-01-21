@@ -36,4 +36,15 @@ class PatientController extends Controller
         //     echo '<br><br>';
         // }
     }
+
+
+    public function update() {
+        $patient = Patient::find(3);
+
+        $patient->floor = '5th';
+
+        $patient->save();
+
+        echo 'Successfully updated patient information';
+    }
 }
