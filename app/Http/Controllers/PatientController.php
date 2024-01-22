@@ -8,13 +8,26 @@ use Illuminate\Http\Request;
 class PatientController extends Controller
 {
     public function create() {
-        $patient = new Patient;
+        // $patient = new Patient;
 
-        $patient->name='Hannan';
-        $patient->mobile='01555555';
-        $patient->floor='4th';
-        $patient->bed='A6';
+        // $patient->name='Hannan';
+        // $patient->mobile='01555555';
+        // $patient->floor='4th';
+        // $patient->bed='A6';
 
+        // $patient->save();
+
+
+        // Patient::firstOrCreate([
+        //     'name'=>'Abdullah Bin Arif',
+        //     'mobile'=>'0123456789',
+        //     'floor'=>'6th',
+        //     'bed'=>'A2'
+        // ]);
+
+        $patient = Patient::firstOrNew(['mobile'=>'0123456789']);
+
+        $patient->name = 'Arif';
         $patient->save();
 
         echo 'Successfully inserted patient information';
