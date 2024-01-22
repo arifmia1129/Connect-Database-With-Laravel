@@ -25,12 +25,17 @@ class PatientController extends Controller
         //     'bed'=>'A2'
         // ]);
 
-        $patient = Patient::firstOrNew(['mobile'=>'0123456789']);
+        // $patient = Patient::firstOrNew(['mobile'=>'0123456789']);
 
-        $patient->name = 'Arif';
-        $patient->save();
+        // $patient->name = 'Arif';
+        // $patient->save();
 
-        echo 'Successfully inserted patient information';
+
+        $patient =  Patient::findOrFail(1);
+
+        dd($patient);
+
+        // echo 'Successfully inserted patient information';
     }
 
 
