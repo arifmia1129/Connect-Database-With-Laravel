@@ -3,6 +3,7 @@
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\WorkerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,3 +44,6 @@ Route::get('patient/update', [PatientController::class, 'update']);
 Route::get('patient/delete', [PatientController::class, 'delete']);
 
 Route::get('patient/mass', [PatientController::class, 'mass']);
+
+
+Route::get('worker', [WorkerController::class, 'index']);
