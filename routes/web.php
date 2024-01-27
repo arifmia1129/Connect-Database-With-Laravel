@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PatientController;
@@ -51,3 +52,5 @@ Route::get('worker', [WorkerController::class, 'index']);
 
 
 Route::get('product', [ProductController::class, 'index']);
+
+Route::get('author', [AuthorController::class, 'index']);
