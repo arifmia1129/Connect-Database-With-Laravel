@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\HelperController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ProductController;
@@ -58,3 +59,6 @@ Route::get('author', [AuthorController::class, 'index']);
 
 
 Route::get('test/email', [TestSendEmailController::class, 'index']);
+
+
+Route::get('result/{marks}', [HelperController::class, 'index']);
