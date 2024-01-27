@@ -5,6 +5,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HelperController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestSendEmailController;
 use App\Http\Controllers\WorkerController;
@@ -62,3 +63,5 @@ Route::get('test/email', [TestSendEmailController::class, 'index']);
 
 
 Route::get('result/{marks}', [HelperController::class, 'index']);
+
+Route::get('people', [PeopleController::class, 'index']);
