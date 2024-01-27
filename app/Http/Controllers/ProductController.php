@@ -9,12 +9,18 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function index() {
-        $res = Category::with('products')->find(2);
-        echo $res->name.'<br><br><br>';
-        foreach($res->products as $product) {
-            echo $product->name.'<br>';
-            echo $product->price.'<br>';
-            echo '<br><br>';
-        }
+        // $res = Category::with('products')->find(2);
+        // echo $res->name.'<br><br><br>';
+        // foreach($res->products as $product) {
+        //     echo $product->name.'<br>';
+        //     echo $product->price.'<br>';
+        //     echo '<br><br>';
+        // }
+
+        $data = Product::with('category')->find(1);
+
+        echo $data->name.'<br>';
+        echo $data->price.'<br>';
+        echo $data->category->name.'<br>';
     }
 }
