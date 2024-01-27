@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class WorkerProfile extends Model
 {
     use HasFactory;
+
+    public function worker() {
+        return $this->belongsTo(Worker::class);
+    }
 }

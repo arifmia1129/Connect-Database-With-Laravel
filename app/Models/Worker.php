@@ -9,7 +9,7 @@ class Worker extends Model
 {
     use HasFactory;
 
-    public function profile() {
-        return $this->hasOne(WorkerProfile::class);
-    }
+    // public function profile() {
+    //     return $this->hasOne(WorkerProfile::class);
+    // }
 }
