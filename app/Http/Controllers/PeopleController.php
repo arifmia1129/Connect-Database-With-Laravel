@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Cache;
 class PeopleController extends Controller
 {
     public function index() {
-        // $data = People::all();
+        $data = People::paginate(10);
+
+        return view('people', compact('data'));
 
         // $data = Cache::remember('people',60, function (){
         //     return People::all();
@@ -20,14 +22,14 @@ class PeopleController extends Controller
         //     echo $people->name.'<br><br>';
         // }
 
-        $people = new People;
+        // $people = new People;
 
-        $people->name = 'Arif';
-        $people->email = 'arif@gmail.com';
-        $people->save();
+        // $people->name = 'Arif';
+        // $people->email = 'arif@gmail.com';
+        // $people->save();
 
-        SendNotification::dispatch();
+        // SendNotification::dispatch();
 
-        dd('People added successfully and email sending is in processing...');
+        // dd('People added successfully and email sending is in processing...');
     }
 }
